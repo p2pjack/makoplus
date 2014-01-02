@@ -1,0 +1,62 @@
+
+*** These modified files were found in JOE when it aborted on Sun Dec 15 13:10:40 2013
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+.git/COMMIT_EDITMSG
+
+*** File '.git/COMMIT_EDITMSG'
+qqqq
+Address new netmgrd data connectivity denials.
+
+Patch fixes the following denials seen when trying
+to use data service on the phone.
+
+denied  { create } for  pid=5042 comm="netmgrd" scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=packet_socket
+denied  { bind } for  pid=5042 comm="netmgrd" scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=packet_socket
+denied  { write } for  pid=5042 comm="netmgrd" scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=packet_socket
+denied  { read } for  pid=5042 comm="netmgrd" path="socket:[17231]" dev="sockfs" ino=17231 scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=packet_socket
+
+denied  { write } for  pid=541 comm="netmgrd" name="property_service" dev="tmpfs" ino=6583 scontext=u:r:netmgrd:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file
+denied  { set } for property=net.rmnet_usb0.dns1 scontext=u:r:netmgrd:s0 tcontext=u:object_r:system_prop:s0 tclass=property_service
+
+denied  { nlmsg_read } for  pid=6365 comm="ip" scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=netlink_route_socket
+denied  { nlmsg_write } for  pid=6365 comm="ip" scontext=u:r:netmgrd:s0 tcontext=u:r:netmgrd:s0 tclass=netlink_route_socket
+
+Change-Id: Iee4bb5b4f3c9d17419ebf69f2764151ec7979249
+
+Conflicts:
+	sepolicy/netmgrd.te
+#
+# It looks like you may be committing a cherry-pick.
+# If this is not correct, please remove the file
+#	.git/CHERRY_PICK_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Author:    Robert Craig <rpcraig@tycho.ncsc.mil>
+#
+# Not currently on any branch.
+# You are currently cherry-picking.
+#   (all conflicts fixed: run "git commit")
+#
+# Changes to be committed:
+#
+#	modified:   Android.mk
+#	modified:   BoardConfig.mk
+#	modified:   device.mk
+#	modified:   full_mako.mk
+#	modified:   gps.conf
+#	modified:   init.mako.rc
+#	modified:   init.mako.usb.rc
+#	modified:   media_profiles.xml
+#	modified:   overlay/frameworks/base/core/res/res/values/config.xml
+#	modified:   overlay/frameworks/base/core/res/res/xml/storage_list.xml
+#	modified:   overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+#	modified:   overlay/frameworks/base/packages/SystemUI/res/values/config.xml
+#	modified:   overlay/packages/services/Telephony/res/values/config.xml
+#	new file:   sepolicy/netmgrd.te
+#
